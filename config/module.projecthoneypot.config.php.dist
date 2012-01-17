@@ -1,0 +1,27 @@
+<?php
+
+$settings = array(
+    'project_honeypot_key'  => 'yourapikey',
+    'maxThreatScore'		=> 50,
+    'minInactivity'			=> 30
+);
+
+/**
+ * You do not need to edit below this line
+ */
+return array(
+    'di' => array(
+        'instance' => array(
+            'projecthoneypot_httpbl_validator' => array(
+                'parameters' => array(
+                    'options' => array(
+                        'apiKey' => $settings['project_honeypot_key'],
+                        'testIp' => "127.1.1.1",
+                        'maxThreatScore' => $settings['maxThreatScore'],
+                        'minInactivity'  => $settings['minInactivity']
+                    ),
+                ),
+            ),
+        ),
+    ),
+);
